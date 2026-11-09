@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Налоговые льготы и преференциальные режимы в РК</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background: #f4f7fc;
+            color: #1e2a3a;
+            line-height: 1.6;
+            padding: 24px 16px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: #0b2b4f;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+        .subhead {
+            font-size: 1rem;
+            color: #4a5f7a;
+            margin-bottom: 28px;
+            border-left: 4px solid #2e6b9e;
+            padding-left: 16px;
+        }
+        /* Вкладки */
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 0;
+            border-bottom: 2px solid #d0ddee;
+        }
+        .tab-btn {
+            background: transparent;
+            border: none;
+            padding: 12px 18px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #3a5670;
+            cursor: pointer;
+            border-radius: 10px 10px 0 0;
+            transition: background 0.2s, color 0.2s;
+            white-space: nowrap;
+        }
+        .tab-btn:hover {
+            background: #e2ebf6;
+            color: #0b2b4f;
+        }
+        .tab-btn.active {
+            background: #ffffff;
+            color: #0b2b4f;
+            box-shadow: 0 -2px 6px rgba(0,0,0,0.04);
+            border-bottom: 3px solid #2e6b9e;
+            margin-bottom: -2px;
+        }
+        /* Содержимое вкладок */
+        .tab-content {
+            display: none;
+            background: #ffffff;
+            padding: 28px 28px 24px;
+            border-radius: 0 12px 12px 12px;
+            box-shadow: 0 8px 24px rgba(0, 20, 40, 0.06);
+            animation: fade 0.25s ease;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        @keyframes fade {
+            from { opacity: 0.6; transform: translateY(4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .tab-content h2 {
+            font-size: 1.5rem;
+            margin-bottom: 6px;
+            color: #0b2b4f;
+        }
+        .tab-content .legal-ref {
+            font-size: 0.9rem;
+            color: #51708c;
+            margin-bottom: 18px;
+            background: #eef4fa;
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 30px;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+            margin: 16px 0 22px;
+        }
+        .card {
+            background: #f8fafd;
+            border-radius: 10px;
+            padding: 16px 18px;
+            border: 1px solid #e2eaf2;
+        }
+        .card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1f4970;
+            margin-bottom: 10px;
+            border-bottom: 1px dashed #cbd9e8;
+            padding-bottom: 6px;
+        }
+        .card ul {
+            padding-left: 18px;
+            font-size: 0.93rem;
+            color: #2c4058;
+        }
+        .card li {
+            margin-bottom: 6px;
+        }
+        .links-block {
+            background: #e9f2fb;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin-top: 12px;
+        }
+        .links-block h3 {
+            font-size: 1rem;
+            color: #0b2b4f;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .links-block a {
+            display: inline-block;
+            color: #1a5e9c;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid #a0c4e2;
+            margin-right: 14px;
+            margin-bottom: 8px;
+            transition: color 0.15s, border-color 0.15s;
+        }
+        .links-block a:hover {
+            color: #0b2b4f;
+            border-bottom-color: #0b2b4f;
+        }
+        .links-block .link-desc {
+            font-size: 0.82rem;
+            color: #4b6d8a;
+            margin-left: 4px;
+            font-weight: 400;
+        }
+        .table-wrap {
+            overflow-x: auto;
+            margin: 16px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+            min-width: 650px;
+        }
+        th {
+            background: #1f3f60;
+            color: #fff;
+            padding: 10px 8px;
+            text-align: left;
+            font-weight: 600;
+        }
+        td {
+            padding: 9px 8px;
+            border-bottom: 1px solid #dce5ef;
+            vertical-align: top;
+        }
+        tr:nth-child(even) td {
+            background: #f6f9fd;
+        }
+        .note {
+            background: #fef7e6;
+            border-left: 4px solid #d69e2e;
+            padding: 12px 18px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            margin-top: 18px;
+            color: #4d3e1a;
+        }
+        .note strong {
+            color: #8a5a0b;
+        }
+        .badge {
+            display: inline-block;
+            background: #1f3f60;
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        @media (max-width: 750px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            .tab-btn { padding: 8px 12px; font-size: 0.82rem; }
+            .tab-content { padding: 18px 16px; }
+            h1 { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Налоговые льготы и преференциальные режимы в РК</h1>
+    <div class="subhead">Законодательные требования, финансовые условия, нормативные ссылки и правила локализации производств (по состоянию на 2026 год)</div>
+
+    <!-- Вкладки -->
+    <div class="tabs" role="tablist">
+        <button class="tab-btn active" data-tab="tab1" role="tab">Свободный склад (СТЗ)</button>
+        <button class="tab-btn" data-tab="tab2" role="tab">Индустриальная зона (ИЗ)</button>
+        <button class="tab-btn" data-tab="tab3" role="tab">СЭЗ «Алатау»</button>
+        <button class="tab-btn" data-tab="tab4" role="tab">Инвестиционный контракт</button>
+        <button class="tab-btn" data-tab="tab5" role="tab">Организации инвалидов</button>
+        <button class="tab-btn" data-tab="tab7" role="tab">Медизделия и подгузники</button>
+        <button class="tab-btn" data-tab="tab6" role="tab">Сводная матрица</button>
+    </div>
+
+    <!-- 1. Свободный склад -->
+    <div id="tab1" class="tab-content active" role="tabpanel">
+        <h2>Свободный склад (режим СТЗ)</h2>
+        <div class="legal-ref">ТК ЕАЭС гл. 29 · ТК РК гл. 30 · НК РК ст. 393</div>
+        <div class="grid-2">
+            <div class="card">
+                <h3>Законодательные требования</h3>
+                <ul>
+                    <li>Помещения в собственности или аренде с охраной и КПП.</li>
+                    <li>Включение в Реестр владельцев свободных складов.</li>
+                    <li>Автоматизированная система учёта товаров.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Налоговые и таможенные льготы</h3>
+                <ul>
+                    <li>НДС 0% при реализации товаров на территорию склада.</li>
+                    <li>Пошлины 0% на ввозимое сырьё, материалы и оборудование.</li>
+                    <li>Импортный НДС 0% при переработке товаров на складе.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Условия, суммы и сроки</h3>
+            <ul>
+                <li>Срок: бессрочно (при соблюдении условий реестра).</li>
+                <li>Сумма: порог законодательно не ограничен.</li>
+                <li>Выпуск продукции подтверждается Реестром отечественных производителей МПС РК.</li>
+            </ul>
+        </div>
+        <div class="links-block">
+            <h3>Активные ссылки для перехода к утверждению</h3>
+            <a href="https://adilet.zan.kz/rus/docs/K1700000123#z292" target="_blank" rel="noopener">Ст. 292 ТК РК — содержание и применение таможенной процедуры свободного склада</a>
+            <span class="link-desc">(действующая редакция)</span><br>
+            <a href="https://zan.adilet.kz/ru/nalogovyi-kodeks/st-393/" target="_blank" rel="noopener">Ст. 393 НК РК — налогооблагаемый и облагаемый доход</a>
+            <span class="link-desc">(смежная норма)</span><br>
+            <a href="https://adilet.zan.kz/rus/docs/K1700000123" target="_blank" rel="noopener">Кодекс РК «О таможенном регулировании» (общая редакция)</a>
+        </div>
+    </div>
+
+    <!-- 2. Индустриальная зона -->
+    <div id="tab2" class="tab-content" role="tabpanel">
+        <h2>Индустриальная зона (ИЗ)</h2>
+        <div class="legal-ref">Предпринимательский кодекс РК · Закон РК № 242-VI</div>
+        <div class="grid-2">
+            <div class="card">
+                <h3>Законодательные требования</h3>
+                <ul>
+                    <li>Соответствие специализации Индустриальной зоны.</li>
+                    <li>Одобрение проекта Региональным координационным советом (РКС).</li>
+                    <li>Подписание договора с Управляющей компанией ИЗ.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Инфраструктурные льготы</h3>
+                <ul>
+                    <li>Готовая инженерная инфраструктура (свет, вода, газ, дороги).</li>
+                    <li>Льготная аренда земельного участка.</li>
+                    <li>Право последующего выкупа участка после ввода объекта.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Условия, суммы и сроки</h3>
+            <ul>
+                <li>Срок аренды: от 10 до 49 лет.</li>
+                <li>Порог инвестиций: от 100–200 млн ₸ (зависит от региона).</li>
+                <li>Налоговые льготы 0% требуют заключения отдельного Инвестконтракта (см. принцип «один режим»).</li>
+            </ul>
+        </div>
+        <div class="links-block">
+            <h3>Активные ссылки для перехода к утверждению</h3>
+            <a href="https://adilet.zan.kz/rus/docs/Z1900000242" target="_blank" rel="noopener">Закон РК «О специальных экономических и индустриальных зонах» № 242-VI</a>
+            <span class="link-desc">(действующая редакция, 2026 г.)</span><br>
+            <a href="https://adilet.zan.kz/rus/docs/K1500000375" target="_blank" rel="noopener">Предпринимательский кодекс РК (общие нормы об ИЗ)</a>
+        </div>
+    </div>
+
+    <!-- 3. СЭЗ «Алатау» -->
+    <div id="tab3" class="tab-content" role="tabpanel">
+        <h2>Специальная экономическая зона «Алатау»</h2>
+        <div class="legal-ref">Закон РК о СЭЗ № 242-VI · НК РК ст. 709</div>
+        <div class="grid-2">
+            <div class="card">
+                <h3>Требования к участнику</h3>
+                <ul>
+                    <li>Регистрация юридического лица на территории СЭЗ.</li>
+                    <li>Осуществление приоритетных видов деятельности (ИТ, электроника, приборы).</li>
+                    <li>Отсутствие филиалов за пределами СЭЗ.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Налоговый пакет 0%</h3>
+                <ul>
+                    <li>КПН 0% по доходам от приоритетной деятельности.</li>
+                    <li>Земельный налог и налог на имущество 0%.</li>
+                    <li>Плата за землю 0% на период договора.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Таможня, суммы и сроки</h3>
+            <ul>
+                <li>НДС 0% при поставке товаров на территорию СЭЗ.</li>
+                <li>Таможенные пошлины 0% (режим СТЗ).</li>
+                <li>Срок льгот: до окончания срока действия СЭЗ (до 25 лет).</li>
+            </ul>
+        </div>
+        <div class="links-block">
+            <h3>Активные ссылки для перехода к утверждению</h3>
+            <a href="https://adilet.zan.kz/rus/docs/Z1900000242" target="_blank" rel="noopener">Закон РК «О специальных экономических и индустриальных зонах» № 242-VI</a><br>
+            <a href="https://zan.adilet.kz/ru/nalogovyi-kodeks/st-709/" target="_blank" rel="noopener">Ст. 709 НК РК — налогообложение организаций на территории СЭЗ</a>
+            <span class="link-desc">(действующая редакция)</span>
+        </div>
+    </div>
+
+    <!-- 4. Инвестиционный контракт -->
+    <div id="tab4" class="tab-content" role="tabpanel">
+        <h2>Инвестиционный контракт (после реформы 2026 года)</h2>
+        <div class="legal-ref">Предпринимательский кодекс РК ст. 283-1 — 283-5 · НК РК гл. 81</div>
+        <div class="grid-2">
+            <div class="card">
+                <h3>Требования к проекту</h3>
+                <ul>
+                    <li>Регистрация ЮЛ Республики Казахстан.</li>
+                    <li>Включение вида деятельности в Перечень приоритетных (ПП РК).</li>
+                    <li>Запрет на игорный бизнес и недропользование.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Виды преференций</h3>
+                <ul>
+                    <li>Освобождение от таможенных пошлин и импортного НДС.</li>
+                    <li>Натурные гранты: земля, здания (до 30% от объёма инвестактивов).</li>
+                    <li>КПН 0% (до 10 лет), земля 0% (до 10 лет), имущество 0% (до 8 лет).</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Суммы и пороги (МРП на 2026 год = 4 325 ₸)</h3>
+            <ul>
+                <li>Новое производство: от <strong>2 000 000 МРП</strong> (≈ 8,65 млрд ₸).</li>
+                <li>Расширение производства: от <strong>5 000 000 МРП</strong> (≈ 21,6 млрд ₸).</li>
+                <li>Соглашение об инвестиционных обязательствах: от <strong>75 000 000 МРП</strong> (≈ 324,4 млрд ₸ за 8 лет).</li>
+            </ul>
+        </div>
+        <div class="links-block">
+            <h3>Активные ссылки для перехода к утверждению</h3>
+            <a href="https://adilet.zan.kz/rus/docs/K1500000375#z283" target="_blank" rel="noopener">Предпринимательский кодекс РК — статьи 283-1 — 283-5 (новая редакция)</a><br>
+            <a href="https://uppersetup.com/ru/blog/investment-preferences-and-the-investment-contract-in-01" target="_blank" rel="noopener">Обзор реформы инвестиционных преференций с 1 января 2026 года</a>
+        </div>
+    </div>
+
+    <!-- 5. Организации инвалидов -->
+    <div id="tab5" class="tab-content" role="tabpanel">
+        <h2>Предприятия организаций инвалидов</h2>
+        <div class="legal-ref">НК РК ст. 290, 394 · Закон о госзакупках РК ст. 51</div>
+        <div class="grid-2">
+            <div class="card">
+                <h3>Критерии квалификации</h3>
+                <ul>
+                    <li>Численность инвалидов не менее 51% от штата.</li>
+                    <li>Фонд оплаты труда инвалидов — не менее 51% от общего ФОТ.</li>
+                    <li>Прямое участие в производстве товаров и услуг.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Налоговые льготы</h3>
+                <ul>
+                    <li>КПН 0%: уменьшение исчисленного КПН на 100%.</li>
+                    <li>НДС 0%: освобождение оборотов по реализации (ст. 394 п. 11).</li>
+                    <li>Налог на имущество и земля 0% по производственным объектам.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Преимущества в закупках</h3>
+            <ul>
+                <li>Выделение специальных категорий товаров только для ОООИ.</li>
+                <li>Внеконкурсные / приоритетные государственные закупки.</li>
+                <li>Освобождение от отдельных видов обеспечения заявок.</li>
+            </ul>
+        </div>
+        <div class="links-block">
+            <h3>Активные ссылки для перехода к утверждению</h3>
+            <a href="https://zan.adilet.kz/ru/nalogovyi-kodeks/st-290/" target="_blank" rel="noopener">Ст. 290 НК РК — налогообложение организаций в социальной сфере</a><br>
+            <a href="https://zan.adilet.kz/ru/nalogovyi-kodeks/st-394/" target="_blank" rel="noopener">Ст. 394 НК РК — обороты, освобождённые от НДС</a><br>
+            <a href="https://adilet.zan.kz/rus/docs/Z1500000434#z51" target="_blank" rel="noopener">Ст. 51 Закона РК «О государственных закупках»</a>
+            <span class="link-desc">(участие отдельных категорий поставщиков)</span>
+        </div>
+    </div>
+
+    <!-- 7. Медизделия и подгузники -->
+    <div id="tab7" class="tab-content" role="tabpanel">
+        <h2>Локализация медицинских изделий (включая подгузники)</h2>
+        <div class="legal-ref">Приказ МЗ РК № 63 · Приказ МПС РК № 72 · Решение Совета ЕЭК № 158</div>
+
+        <div class="card">
+            <h3>Почему это приоритет</h3>
+            <ul>
+                <li>Государство стимулирует <strong>глубокую локализацию</strong> — от простой упаковки к полному циклу производства[reference:0].</li>
+                <li>Производство резиновых санитарно-гигиенических и медицинских изделий <strong>прямо включено</strong> в перечень приоритетных видов деятельности для СЭЗ (п. 21)[reference:1].</li>
+                <li>Действует <strong>нулевая ввозная пошлина на суперабсорбенты</strong> (ключевое сырьё для подгузников) — продлена до 31 декабря 2026 года[reference:2].</li>
+            </ul>
+        </div>
+
+        <h3 style="margin-top: 22px; color: #0b2b4f;">Ключевой инструмент: долгосрочные контракты по глубине локализации</h3>
+        <p style="font-size: 0.93rem; color: #2c4058; margin-bottom: 12px;">
+            По <strong>приказу Министра здравоохранения РК от 2 июня 2026 года № 63</strong> срок долгосрочного договора напрямую зависит от того, насколько глубоко производство локализовано в Казахстане[reference:3].
+        </p>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Уровень локализации</th>
+                        <th>Максимальный срок контракта</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Продукция <strong>полностью произведена</strong> в Казахстане</td>
+                        <td><strong>до 10 лет</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Полный цикл производства с использованием местной АФС (для лекарств)</td>
+                        <td>до 7 лет</td>
+                    </tr>
+                    <tr>
+                        <td>Полный цикл производства (для лекарств)</td>
+                        <td>до 5 лет</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p style="font-size: 0.85rem; color: #51708c;">
+            Аналогичный подход применяется и к производителям медицинских изделий: <strong>чем больше операций перенесено в Казахстан, тем длиннее гарантия сбыта</strong>[reference:4].
+        </p>
+
+        <h3 style="margin-top: 22px; color: #0b2b4f;">Какие преференциальные режимы применимы (выбрать <u>один</u>)</h3>
+        <div class="grid-2">
+            <div class="card">
+                <h3>СЭЗ «Алатау» / «Оңтүстік»</h3>
+                <ul>
+                    <li>Земельные участки в субаренду <strong>на безвозмездной основе</strong>, с инфраструктурой.</li>
+                    <li>Налоговые и таможенные льготы для участников СЭЗ (КПН, НДС, пошлины, земля/имущество — 0%).</li>
+                    <li>Производство медизделий — приоритетный вид деятельности (п. 21)[reference:5].</li>
+                    <li><strong>Кейс:</strong> завод детских подгузников в СЭЗ «Оңтүстік» (Шымкент) запущен при финансовой поддержке Фонда развития промышленности.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Соглашение об инвестициях / упрощённый инвестконтракт</h3>
+                <ul>
+                    <li>Освобождение от <strong>КПН, НДС и таможенных пошлин</strong> на импорт оборудования.</li>
+                    <li>Доступ к земельным участкам <strong>без конкурса</strong>.</li>
+                    <li>Государственная поддержка инфраструктурой.</li>
+                    <li><strong>Кейс:</strong> «CAPABLE GROUP» (Туркестанская обл.) — производитель детских подгузников по СИК, получил освобождение от налогов, пошлин и других обязательных платежей.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="note">
+            <strong>Важно:</strong> преференциальные режимы <u>несовместимы</u>. Нельзя одновременно применять льготы по СЭЗ и по инвестиционному контракту/СИК. Необходимо выбрать <strong>один</strong> режим, который лучше всего подходит под параметры проекта (объём инвестиций, локация, глубина переработки).
+        </div>
+
+        <div class="links-block">
+            <h3>Активные ссылки для перехода к утверждению</h3>
+            <a href="https://adilet.zan.kz/rus/docs/V2400034030" target="_blank" rel="noopener">Приказ МПС РК № 72 — Перечень приоритетных видов деятельности для СЭЗ (включая п. 21 — санитарно-гигиенические и медицинские изделия)</a><br>
+            <a href="https://adilet.zan.kz/rus/docs/Z1900000242" target="_blank" rel="noopener">Закон РК «О специальных экономических и индустриальных зонах» № 242-VI</a><br>
+            <a href="https://adilet.zan.kz/rus/docs/K1500000375#z283" target="_blank" rel="noopener">Предпринимательский кодекс РК — нормы об инвестиционном контракте (ст. 283-1 — 283-5)</a><br>
+            <a href="https://zakon.uchet.kz/rus/docs/V2600038344" target="_blank" rel="noopener">Приказ МЗ РК № 63 от 02.06.2026 — Правила закупа лекарств и медизделий (локализация)</a><br>
+            <a href="https://adilet.zan.kz/rus/docs/R2300000158" target="_blank" rel="noopener">Решение Совета ЕЭК № 158 — нулевая пошлина на суперабсорбенты до 31.12.2026</a>
+        </div>
+    </div>
+
+    <!-- 6. Сводная матрица -->
+    <div id="tab6" class="tab-content" role="tabpanel">
+        <h2>Сводная матрица преференциальных режимов</h2>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Режим</th>
+                        <th>КПН</th>
+                        <th>НДС / Пошлины</th>
+                        <th>Земля / Имущество</th>
+                        <th>Ключевой НПА</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Свободный склад</td>
+                        <td>20% (стандарт)</td>
+                        <td>0% (импорт сырья)</td>
+                        <td>Стандарт</td>
+                        <td><a href="https://adilet.zan.kz/rus/docs/K1700000123#z292" target="_blank" rel="noopener">ТК РК гл. 30</a></td>
+                    </tr>
+                    <tr>
+                        <td>Индустриальная зона</td>
+                        <td>20% (без ИК)</td>
+                        <td>Стандарт</td>
+                        <td>Готовая инфраструктура</td>
+                        <td><a href="https://adilet.zan.kz/rus/docs/Z1900000242" target="_blank" rel="noopener">Закон № 242-VI</a></td>
+                    </tr>
+                    <tr>
+                        <td>СЭЗ «Алатау»</td>
+                        <td>0%</td>
+                        <td>0%</td>
+                        <td>0%</td>
+                        <td><a href="https://zan.adilet.kz/ru/nalogovyi-kodeks/st-709/" target="_blank" rel="noopener">НК РК ст. 709</a></td>
+                    </tr>
+                    <tr>
+                        <td>Инвестконтракт (новый)</td>
+                        <td>0% (до 10 лет)</td>
+                        <td>0% пошлины + НДС импорт</td>
+                        <td>0% (8–10 лет)</td>
+                        <td><a href="https://adilet.zan.kz/rus/docs/K1500000375#z283" target="_blank" rel="noopener">ПК РК ст. 283-1 — 283-5</a></td>
+                    </tr>
+                    <tr>
+                        <td>Общество инвалидов</td>
+                        <td>0%</td>
+                        <td>0% (оборот)</td>
+                        <td>0%</td>
+                        <td><a href="https://zan.adilet.kz/ru/nalogovyi-kodeks/st-290/" target="_blank" rel="noopener">НК РК ст. 290, 394</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="note">
+            <strong>Принцип «один проект — один режим».</strong> С 1 января 2026 года инвестиционные преференции предоставляются только по одному из трёх инструментов (соглашение об инвестициях, соглашение об инвестиционных обязательствах или упрощённый инвестиционный контракт) и только по одному из них одновременно[reference:6][reference:7]. Совмещение льгот по разным режимам (например, СЭЗ и инвестиционный контракт) <u>не допускается</u>.
+        </div>
+    </div>
+</div>
+
+<script>
+    (function() {
+        const tabs = document.querySelectorAll('.tab-btn');
+        const contents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(btn => {
+            btn.addEventListener('click', function() {
+                tabs.forEach(b => b.classList.remove('active'));
+                contents.forEach(c => c.classList.remove('active'));
+
+                this.classList.add('active');
+
+                const tabId = this.getAttribute('data-tab');
+                const target = document.getElementById(tabId);
+                if (target) target.classList.add('active');
+            });
+        });
+    })();
+</script>
+</body>
+</html>
